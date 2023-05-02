@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazyload";
 import ImageLoader from "./ImageLoader";
 
 function Recomended() {
@@ -37,8 +36,6 @@ function Recomended() {
     }
   };
 
-
-
   return (
     <div>
       <Title>Recomended For You</Title>
@@ -49,9 +46,7 @@ function Recomended() {
               <Link to={"/recipe/" + recipe.id}>
                 <Card>
                   <p>{recipe.title}</p>
-                  <LazyLoad effect="blur">
-                    <ImageLoader src={recipe.image} alt={recipe.title} />
-                  </LazyLoad>
+                  <ImageLoader src={recipe.image} alt={recipe.title} />
                   <Gradient />
                 </Card>
               </Link>
@@ -62,8 +57,6 @@ function Recomended() {
     </div>
   );
 }
-
-
 
 const Title = styled.h3`
   background: #00bbf97e;
