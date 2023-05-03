@@ -64,18 +64,24 @@ const Title = styled.h3`
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 15px;
+  
+  @media only screen and (max-width: 400px) {
+    text-align: center;   
+  }
 `;
 
 const Wrapper = styled.div`
-  margin: 5rem 0rem;
+  margin: 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 4rem;
+  justify-content: center;
 `;
 
 const Card = styled.div`
   min-height: 20rem;
   border-radius: 2rem;
+  margin: 0rem 1rem;
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease;
