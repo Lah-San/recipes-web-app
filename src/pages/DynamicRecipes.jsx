@@ -89,7 +89,7 @@ function DynamicRecipes() {
                 <Link to={"/recipe/" + recipe.id}>
                   <Card>
                     <p>{recipe.title}</p>
-                    <ImageLoader src={recipe.image} alt={recipe.title} />
+                    <img src={recipe.image} alt={recipe.title} loading="auto"/>
                     <Gradient />
                   </Card>
                 </Link>

@@ -68,7 +68,7 @@ function Veggie() {
                 <Card>
                   <Link to={"/recipe/" + item.id}>
                     <p>{item.title}</p>
-                    <ImageLoader src={item.image} alt={item.title} />
+                    <img src={item.image} alt={item.title} loading="lazy"/>
                     <Gradient />
                   </Link>
                 </Card>

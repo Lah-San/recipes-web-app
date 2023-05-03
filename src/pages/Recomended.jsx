@@ -27,9 +27,24 @@ function Recomended() {
         );
         const data = await api.json();
 
-        localStorage.setItem("recomended", JSON.stringify(data.recipes));
-
-        setRecomended(data.recipes);
+        // convert each image to a base64 encoded string and store it in the local storage
+        const recipesWithImages = await Promise.all(
+          data.recipes.map(async (recipe) => {
+            const imageResponse = await fetch(recipe.image);
+            const imageBlob = await imageResponse.blob();
+            const imageBase64 = await new Promise((resolve) => {
+              const reader = new FileReader();
+              reader.readAsDataURL(imageBlob);
+              reader.onloadend = () => {
+                resolve(reader.result);
+              };
+            });
+            recipe.image = imageBase64;
+            return recipe;
+          })
+        );
+        localStorage.setItem("recomended", JSON.stringify(recipesWithImages));
+        setRecomended(recipesWithImages);
       }
     } catch (e) {
       setError(e);
@@ -46,7 +61,7 @@ function Recomended() {
               <Link to={"/recipe/" + recipe.id}>
                 <Card>
                   <p>{recipe.title}</p>
-                  <ImageLoader src={recipe.image} alt={recipe.title} />
+                  <img src={recipe.image} alt={recipe.title} loading="lazy"/>
                   <Gradient />
                 </Card>
               </Link>
@@ -64,9 +79,9 @@ const Title = styled.h3`
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 15px;
-  
+
   @media only screen and (max-width: 400px) {
-    text-align: center;   
+    text-align: center;
   }
 `;
 

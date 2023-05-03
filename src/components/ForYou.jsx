@@ -66,7 +66,7 @@ function ForYou() {
                 <Card>
                   <Link to={"/recipe/" + recipe.id}>
                     <p>{recipe.title}</p>
-                    <ImageLoader src={recipe.image} alt={recipe.title} />
+                    <img src={recipe.image} alt={recipe.title} loading="auto"/>
                   </Link>
                   <Gradient />
                 </Card>

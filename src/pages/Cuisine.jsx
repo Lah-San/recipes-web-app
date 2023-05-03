@@ -46,10 +46,13 @@ const Grid = styled(motion.div)`
   padding: .5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
   grid-gap: 3rem;
 `;
 
 const Card = styled.div`
+  margin: 1.5rem 1rem;
+
   img{
     width: 100%;
     border-radius: 2rem;
