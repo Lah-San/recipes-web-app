@@ -43,15 +43,19 @@ const Grid = styled(motion.div)`
   display: grid;
   margin-top: 2rem;
   padding: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-gap: 3rem;
   justify-content: center;
-
+  align-items: center;
+  justify-items: center;
 `;
 
 const Card = styled.div`
   border-radius: 15px;
+  max-width: 20rem;
   margin: 0rem 1rem;
+  transition: all .15s;
+
   img {
     width: 100%;
     border-radius: 2rem;
@@ -61,8 +65,13 @@ const Card = styled.div`
   }
   h4 {
     text-align: center;
-    padding: 1rem;
+    white-space: pre-wrap;
+  }
+
+  :hover{
+    scale: 1.1;   
   }
 `;
+
 
 export default Searched;

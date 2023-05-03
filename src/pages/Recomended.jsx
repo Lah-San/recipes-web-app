@@ -99,7 +99,7 @@ const Card = styled.div`
   margin: 0rem 1rem;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.15s ease;
   :hover {
     transform: scale(1.05);
     box-shadow: 1px 2px 50px #bdbdbd;
