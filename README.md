@@ -19,10 +19,6 @@ To install and run the web application, you need to have Node.js and npm install
 
 To build the web application for production, run `npm run build` and then `npm run serve` to serve the built files.
 
-## Technologies and Dependencies
-
-This web application is built with [Vite](https://vitejs.dev/), a fast and lightweight frontend development tool. It uses [Vue.js](https://vuejs.org/) as the frontend framework, [Tailwind CSS](https://tailwindcss.com/) as the utility-first CSS framework, and [Axios](https://axios-http.com/) as the HTTP client. It also uses the [Spoonacular API](https://spoonacular.com/food-api) to fetch the recipes data.
-
 ## Contribution and Issues
 
 This web application is open to contributions from anyone who is interested. You can fork this repository and make a pull request with your changes. You can also report any issues or bugs you encounter using the [issues tracker](https://github.com/user-name/recipes-web-app/issues).
